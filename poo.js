@@ -1,8 +1,8 @@
 class Persona {
-  constructor(nombre, edad, DNI, sexo, peso, altura, año_nacimiento) {
+  constructor(nombre, edad, dni, sexo, peso, altura, año_nacimiento) {
     this.nombre = nombre;
     this.edad = edad;
-    this.DNI = DNI;
+    this.dni = dni;
     this.sexo = sexo;
     this.peso = peso;
     this.altura = altura;
@@ -62,3 +62,31 @@ class Persona {
     return poblaciones;
   }
 }
+
+let form = document.querySelector("form");
+let resDiv = document.querySelector("#resultado");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  let nombre = form.nombre.value;
+  let edad = parseInt(form.edad.value);
+  let dni = form.dni.value;
+  let sexo = form.sexo.value;
+  let peso = parseFloat(form.peso.value);
+  let altura = parseFloat(form.altura.value);
+  let año_nacimiento = parseInt(form.año_nacimiento.value);
+
+  let persona = new Persona(
+    nombre,
+    edad,
+    dni,
+    sexo,
+    peso,
+    altura,
+    año_nacimiento
+  );
+  let genpers = persona.mostrarGeneracion();
+  let esMayorEdad =
+    persona.edad >= 18 ? "Es mayor de edad" : "Es menor de edad";
+  resDiv.innerHTML = `<p>${genpers}</p><p>${esMayorEdad}</p>`;
+});

@@ -6,6 +6,27 @@
     <title>poo</title>
   </head>
   <body>
+    <form>
+      <label for="nombre">Nombre:</label>
+      <input type="text" name="nombre" id="nombre" requerid />
+      <label for="edad">Edad:</label>
+      <input type="number" name="edad" id="edad" requerid />
+      <label for="dni">DNI:</label>
+      <input type="number" name="dni" id="dni" requerid />
+      <label for="sexo">Sexo</label>
+      <select name="sexo" id="sexo" required>
+        <option value="H">Hombre</option>
+        <option value="M">Mujer</option>
+      </select>
+      <label for="peso">Peso</label>
+      <input type="text" name="peso" id="peso" requerid />
+      <label for="altura">Altura</label>
+      <input type="text" name="altura" id="altura" requerid />
+      <label for="año_nacimiento">Año de nacimiento</label>
+      <input type="text" name="año_nacimiento" id="año_nacimiento" requerid />
+      <button type="submit">Crear Persona</button>
+    </form>
+    <div id="resultado"></div>
     <script src="poo.js"></script>
   </body>
 </html>
